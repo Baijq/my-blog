@@ -3,15 +3,22 @@ package com.biubiu.myblog.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * 用户
  */
 @Data
 @ApiModel("用户")
+@NoArgsConstructor
+@AllArgsConstructor
+@Accessors(chain = true)
 public class User implements Serializable {
 
     /**
@@ -24,10 +31,10 @@ public class User implements Serializable {
     private Integer id;
 
     @ApiModelProperty(value = "用户名", dataType = "String")
-    private String name;
+    private String username;
 
     @ApiModelProperty(value = "昵称", dataType = "String")
-    private String nickName;
+    private String nickname;
 
     @ApiModelProperty(value = "密码", dataType = "String")
     private String password;
@@ -41,4 +48,12 @@ public class User implements Serializable {
     @ApiModelProperty(value = "打赏码路径", dataType = "String")
     private String reward;
 
+    @ApiModelProperty(value = "打赏码路径", dataType = "String")
+    private String avatar;
+
+    @ApiModelProperty(value = "创建时间", dataType = "Date")
+    private Date createTime;
+
+    @ApiModelProperty(value = "更新时间", dataType = "Date")
+    private Date updateTime;
 }

@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+spring:
+  datasource:
+    url: jdbc:mysql://114.215.149.153:3306/db_blog?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+  #thymeleaf
+  thymeleaf:
+    cache: false
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+
+logging.level:
+  com.biubiu.myblog.dao: debug
+
+nacos.config.server-addr: 127.0.0.1:8848

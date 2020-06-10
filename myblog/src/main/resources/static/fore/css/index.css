@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#app{
+    margin: 0 auto;
+    width: 900px;
+}
+
+.add-btn{
+    margin-top: 20px;
+    width: 100%;
+}
+.body{
+    margin-top: 20px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    display: table;
+    content: "";
+}
+.clearfix:after {
+    clear: both
+}
+
+.box-card {
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="content">
+
+</div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<!--<script src="editormd/lib/marked.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    $.ajax({
+        url: 'http://localhost:8888/blog',
+        type: 'get',
+        success: function(data){
+            $('#content').html(marked(data.body));
+            console.log(data)
+            // 这里调用了marked框架中的marked函数实现Markdown2HTML的解析
+            // document.getElementById("content").innerHTML=marked(xmlhttp.responseText);
+        }
+
+    })
+</script>
+</body>
+</html>

@@ -15,9 +15,9 @@
         <result property="imgUrl" column="blog_img"/>
         <result property="state" column="blog_state"/>
         <result property="user.id" column="user_id"/>
-        <result property="user.name" column="user_name"/>
+        <result property="user.username" column="user_name"/>
         <result property="user.reward" column="user_reward"/>
-        <result property="user.nickName" column="nick_name"/>
+        <result property="user.nickname" column="nick_name"/>
     </resultMap>
 
     <insert id="saveBlog" parameterType="com.biubiu.myblog.entity.Blog" useGeneratedKeys="true" keyProperty="id" keyColumn="blog_id">
@@ -95,7 +95,7 @@
 
     <select id="findAllblogs" resultMap="Blog">
         SELECT blog_id,blog_title,LEFT (blog_body,150) AS blog_body,blog_discussCount,blog_blogViews,blog_time,blog_img,blog_state,b.user_id,u.user_name,u.nick_name
-        FROM blog b LEFT JOIN user u on b.user_id = u.user_id
+        FROM `blog` b LEFT JOIN `user` u on b.user_id = u.user_id
         ORDER BY blog_state DESC,blog_time DESC
     </select>
 

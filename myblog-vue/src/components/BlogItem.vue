@@ -30,7 +30,7 @@ export default {
     $route: {
       handler() {
         this.blogId = this.$route.query.id;//获取路由中传过来的参数
-        this.$axios.get("/blog/" + this.$route.params.id).then((response) => {
+        this.$axios.get("/api-info/blogs/" + this.$route.params.id).then((response) => {
           let blog = response.data.data;
           this.blog = blog;
           this.htmlContent = marked(blog.body)
@@ -41,14 +41,14 @@ export default {
     deep: true,
   },
   mounted() {
-    this.$axios.get("/blog/" + this.$route.params.id).then((response) => {
+    this.$axios.get("/api-info/blogs/" + this.$route.params.id).then((response) => {
       let blog = response.data.data;
       this.blog = blog;
       this.htmlContent = marked(blog.body)
     })
   },
   created() {
-    this.$axios.get("/blog/" + this.$route.params.id).then((response) => {
+    this.$axios.get("/api-info/blogs/" + this.$route.params.id).then((response) => {
       let blog = response.data.data;
       this.blog = blog;
       this.htmlContent = marked(blog.body)

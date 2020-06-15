@@ -17,17 +17,20 @@
                   <el-image :src="blog.imgUrl"></el-image>
                 </router-link>
               </el-aside>
-              <el-main style="height:176px;background:#fef;">
+              <el-main style="height:176px;background:#fef;padding:0;padding-left:20px;">
                 <router-link :to="{path:'/blog/detail/'+blog.id}">
                     <h3>{{blog.title}}</h3>
                 </router-link>
-                <router-link :to="{path:'/blog/detail/'+blog.id}">
-                    <p style="font-size:14px;color:#909399;">{{blog.body.substring(0, 60)}}</p>
-                </router-link>
-                <div>
+                <p style="font-size:14px;color:#909399;">
+                  {{blog.body.substring(0, 100)}}
+                  <router-link :to="{path:'/blog/detail/'+blog.id}">
+                  阅读全文
+                  </router-link>
+                </p>
+                <p>
                   <span><i class="fa fa-clock-o" style="color:red"></i>&nbsp;{{blog.time}}</span>&nbsp;&nbsp;
-                  <span><i class="fa fa-user-circle-o" style="color:#e6a23c"></i>&nbsp;{{blog.user.nickName}}</span>                    
-                </div>
+                  <span><i class="fa fa-user-circle-o" style="color:#e6a23c"></i>&nbsp;{{blog.user.nickname}}</span>                    
+                </p>
               </el-main>
             </el-container>
           </el-card>
@@ -163,7 +166,7 @@ export default {
     //   this.bloglist = data;
     // });
     //获取博客列表
-    this.$axios.get("/blog")
+    this.$axios.get("/api-info/blogs")
     .then(res=>{
       this.bloglist = res.data.data;
     })
@@ -176,7 +179,7 @@ export default {
       this.listShow = true;
     }
     //获取右侧tag
-    this.$axios.get("/tag").then((response) => {
+    this.$axios.get("/api-info/tags").then((response) => {
       this.tagList = response.data.data;
     })
     

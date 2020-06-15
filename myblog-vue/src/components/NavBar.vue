@@ -1,6 +1,6 @@
 <template>
   <div id="navbar">
-    <el-menu router :default-active="this.$route.path" mode="horizontal" active-text-color="#BC1717" @select="handleSelect">
+    <el-menu router :default-active="activeIndex" mode="horizontal" active-text-color="#BC1717" @select="handleSelect">
 
       <el-menu-item id="logo" index="/addblog">
         BiuBiu
@@ -29,7 +29,7 @@ export default {
     name: 'navbar',
     data() {
       return {
-        activeIndex: '1',
+        activeIndex: this.$route.path,
         searchStr: '',
         navList: [
           {name: '首页', path: '/index'},
@@ -48,6 +48,20 @@ export default {
       },
       search() {
         console.log(this.searchStr);
+      }
+    },
+    watch: {
+      // 监控当前页面path，防止刷新页面显示错误
+      '$route.path': {
+        deep: true,
+        immediate: true,
+        handler(to, from) {
+          console.log("从" + to + "到" + from);
+          this.activeIndex = to;
+          if (to.indexOf("/blog/detail/") != -1){
+            this.activeIndex = '/blog'
+          }
+        }
       }
     }
 }

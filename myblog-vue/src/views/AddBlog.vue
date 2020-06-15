@@ -91,7 +91,7 @@ export default {
     // 添加博客
     commit() {
       // console.log(this.blog)
-      this.$axios.post("/blog",JSON.stringify(this.blog),{headers: {'Content-Type': 'application/json;charset=UTF8'}})
+      this.$axios.post("/api-info/blogs",JSON.stringify(this.blog),{headers: {'Content-Type': 'application/json;charset=UTF8'}})
       .then((res) => {
         // console.log(res.data)
         if(res.data.success) {
@@ -124,7 +124,7 @@ export default {
       var file = new FormData();
       file.append('file', $file);
       this.$axios({
-        url: '/blog/uploadImg',
+        url: '/api-info/blogs/uploadImg',
         method: 'post',
         data: file,
         headers: {'Content-Type': 'multipart/form-data'}
@@ -146,7 +146,7 @@ export default {
     }
   },
   created() {
-    this.$axios.get("/tag").then((response) => {
+    this.$axios.get("/api-info/tags").then((response) => {
       this.tagList = response.data.data;
     })
   }

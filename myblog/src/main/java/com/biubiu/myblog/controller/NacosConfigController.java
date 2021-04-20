@@ -1,7 +1,5 @@
 package com.biubiu.myblog.controller;
 
-import com.alibaba.nacos.api.config.annotation.NacosValue;
-import com.alibaba.nacos.spring.context.annotation.config.NacosPropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -14,10 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("config")
-@NacosPropertySource(dataId = "test001", autoRefreshed = true)
+//@NacosPropertySource(dataId = "test001", autoRefreshed = true)
 public class NacosConfigController {
 
-    @NacosValue(value = "${test}", autoRefreshed = true)
+//    @NacosValue(value = "${test}", autoRefreshed = true)
     private String test;
 
     @RequestMapping(value = "/get", method = RequestMethod.GET)

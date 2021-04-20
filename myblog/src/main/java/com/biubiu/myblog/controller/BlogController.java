@@ -25,7 +25,7 @@ import java.io.IOException;
 
 @Api(tags = "博文api")
 @RestController
-@RequestMapping("/api-info/blogs")
+@RequestMapping("/api/blogs")
 @CrossOrigin
 public class BlogController {
 

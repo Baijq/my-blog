@@ -42,7 +42,7 @@ public class BlogService {
     private BlogDao blogDao;
     @Resource
     private UserDao userDao;
-    @Resource
+//    @Resource
     private DictInfoCache dictInfoCache;
 
     /**

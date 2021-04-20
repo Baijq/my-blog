@@ -36,20 +36,26 @@ public class User implements Serializable {
     @ApiModelProperty(value = "昵称", dataType = "String")
     private String nickname;
 
+    @ApiModelProperty(value = "姓名", dataType = "String")
+    private String realName;
+
     @ApiModelProperty(value = "密码", dataType = "String")
     private String password;
 
+    @ApiModelProperty(value = "头像", dataType = "String")
+    private String avatar;
+
     @ApiModelProperty(value = "邮箱", dataType = "String")
     private String mail;
+
+    @ApiModelProperty(value = "电话", dataType = "String")
+    private String phone;
 
     @ApiModelProperty(value = "用户状态", dataType = "Integer")
     private Integer state;
 
     @ApiModelProperty(value = "打赏码路径", dataType = "String")
     private String reward;
-
-    @ApiModelProperty(value = "打赏码路径", dataType = "String")
-    private String avatar;
 
     @ApiModelProperty(value = "创建时间", dataType = "Date")
     private Date createTime;

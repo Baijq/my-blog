@@ -17,17 +17,17 @@ import java.util.Map;
  *
  * @author wbbaijq
  */
-@Component
+//@Component
 public class DictInfoCache {
 
     private static final Logger log = LoggerFactory.getLogger(DictInfoCache.class);
 
     public static Map<String, DictInfo> dictCache = new HashMap<>();
 
-    @Resource
+//    @Resource
     private DictInfoDao dictInfoDao;
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         log.info("系统启动中...加载DictInfoCache");
         List<DictInfo> dictInfos = dictInfoDao.queryAll();

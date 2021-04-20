@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 @Api(tags = "标签api")
 @RestController
-@RequestMapping("/api-info/tags")
+@RequestMapping("/api/tags")
 @CrossOrigin
 public class TagController {
 

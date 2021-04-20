@@ -12,10 +12,10 @@ import javax.annotation.Resource;
  *
  * @author wbbaijq
  */
-@Configuration
+//@Configuration
 public class MyWebMvcConfigurer implements WebMvcConfigurer {
 
-    @Resource
+//    @Resource
     private DictInfoCache dictInfoCache;
 
     @Override
